@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "c7122fd4-c87b-4958-9538-f491beeca575",
+		"name": "new_recepie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29946856"
+	},
+	"item": [
+		{
+			"name": "AddRecipe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipeName\": \"Paneer Tikka\",\r\n    \"category\": \"veg\",\r\n    \"instructions\":\"gas\",\r\n    \"servings\": 4,\r\n    \"ingredients\": [{\r\n        \"name\": \"Paneer\"\r\n    },{\r\n        \"name\": \"spices\"\r\n    }, {\r\n        \"name\": \"paprika\"\r\n    }]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/recipe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllRecipes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateRecipe",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"recipeId\": \"c62b9bb3-6172-403d-a6fe-6a1082f999ab\",\r\n        \"recipeName\": \"Manglore bun\",\r\n        \"category\": \"Desert\",\r\n        \"instructions\": \"gas\",\r\n        \"servings\": 4,\r\n        \"ingredients\": [\r\n            {\r\n                \"ingredientId\": \"f348acb4-1c11-4639-977f-4ff07fbffea8\",\r\n                \"name\": \"Banana\"\r\n            },\r\n            {\r\n                \"ingredientId\": \"35020f49-0ef2-4b0b-98fb-f0970167cbf0\",\r\n                \"name\": \"Flour\"\r\n            },\r\n            {\r\n                \"ingredientId\": \"fcce1347-a3dc-4ad4-9647-3e8e4bd1711d\",\r\n                \"name\": \"Sugar\"\r\n            },\r\n             {\r\n                \"name\": \"Oil\"\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/recipe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchRecipe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"instructions\":\"gas\",\r\n    \"servings\":4,\r\n    \"ingredients\": {\"Spices\": true}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/search/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search",
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search By category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes/category/Desert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"category",
+						"Desert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Recipe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipe/03744d46-1701-4c54-804e-d70b5575fc49",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipe",
+						"03744d46-1701-4c54-804e-d70b5575fc49"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
